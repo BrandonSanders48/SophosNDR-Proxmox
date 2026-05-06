@@ -2,6 +2,9 @@
 
 This guide documents how to run Sophos NDR as a virtual machine on Proxmox VE with a switch port mirror as the traffic source. Sophos NDR is designed for specific appliances, so running it in a generic QEMU/KVM VM requires several workarounds to get the DPDK-based capture engine (Dragonfly) working.
 
+> This project is not affiliated with or endorsed by Sophos. 
+> Use at your own risk. Configuration files may break on 
+> Sophos NDR software updates.
 ---
 
 ## Repository Files
