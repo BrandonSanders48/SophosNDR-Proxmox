@@ -50,7 +50,8 @@ Configure the VM with these settings. The most critical point is **do not enable
 |---------|-------|
 | Machine | `q35` (NOT q35 + viommu=intel) |
 | BIOS | OVMF (UEFI) |
-| CPU | host, flags=+pdpe1gb | 8 cores
+| CPU | host*, flags=+pdpe1gb | 8 cores
+*Host CPU isnt ideal, working on a fix for this
 | RAM | 32GB minimum |
 | DISK | 256GB minimum |
 | SCSI Controller | virtio-scsi-single |
