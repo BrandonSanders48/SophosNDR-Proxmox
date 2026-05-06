@@ -2,7 +2,8 @@
 
 This guide documents how to run Sophos NDR as a virtual machine on Proxmox VE with a switch port mirror as the traffic source. Sophos NDR is designed for specific appliances, so running it in a generic QEMU/KVM VM requires several workarounds to get the DPDK-based capture engine (Dragonfly) working.
 
-> This project is not affiliated with or endorsed by Sophos. 
+> This project is not affiliated with or endorsed by Sophos.
+> AI helped me create this ReadMe
 > Use at your own risk. Configuration files may break on 
 > Sophos NDR software updates.
 ---
@@ -134,7 +135,7 @@ In switch config, go to **Port Mirroring** and configure:
 - **Destination:** The switch port connected to `nic0` on the Proxmox host
 
 
-> **Note:** my switch strips VLAN 802.1Q tags on mirrored traffic. All traffic arrives on the SPAN bridge untagged regardless of source VLAN. Sophos NDR still sees traffic from all VLANs — the different IP subnets in the flow data confirm multi-VLAN capture.
+> **Note:** my switch strips VLAN 802.1Q tags on mirrored traffic. All traffic arrives on the SPAN bridge untagged regardless of source VLAN. Sophos NDR still sees traffic from all VLANs, the different IP subnets in the flow data confirm multi-VLAN capture.
 
 ---
 
