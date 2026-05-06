@@ -1,0 +1,12 @@
+[Unit]
+Description=Enable VFIO noiommu mode and bind capture NIC
+Before=kubelet.service
+After=systemd-modules-load.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'echo 1 > /sys/module/vfio/parameters/enable_unsafe_noiommu_mode; modprobe vfio-pci; echo "1af4 1000" > /sys/bus/pci/drivers/vfio-pci/new_id; exit 0'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

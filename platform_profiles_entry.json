@@ -1,0 +1,14 @@
+{
+  "identification": {
+    "product_name": "Standard PC (Q35 + ICH9, 2009)"
+  },
+  "dragonfly_cpu_string": "0,1,3,5,7",
+  "ml_cpu_string": "0,2,4,6",
+  "management_interface": "mgmt0",
+  "syslog_interface": "",
+  "capture_interfaces": [
+    {
+      "name": "span0"
+    }
+  ]
+}

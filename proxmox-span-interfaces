@@ -1,0 +1,17 @@
+# Proxmox SPAN Bridge Configuration
+# Add to /etc/network/interfaces on the Proxmox host
+#
+# Replace:
+#   nic0      - with your physical NIC connected to the Meraki mirror destination port
+#   tap116i1  - with your VM's tap interface (format: tap<vmid>i<nic_index>)
+#               e.g. VM ID 116, second NIC (index 1) = tap116i1
+
+auto SPAN
+iface SPAN inet manual
+    bridge-ports nic0
+    bridge-stp off
+    bridge-fd 0
+    post-up ip link set SPAN promisc on
+    post-up ip link set nic0 promisc on
+    post-up bridge link set dev nic0 learning off flood on
+    post-up bridge link set dev tap116i1 flood on
